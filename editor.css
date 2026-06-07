@@ -1,0 +1,144 @@
+/* ======= FLOATING EDITOR PANEL ======= */
+#editor-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 280px;
+    max-height: 80vh;
+    background: rgba(10, 15, 30, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+#editor-panel h3 {
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    color: #64ffda;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.editor-btn {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    border: 2px dashed rgba(100, 255, 218, 0.4);
+    border-radius: 10px;
+    color: #64ffda;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.editor-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    border-color: #64ffda;
+    box-shadow: 0 0 15px rgba(100, 255, 218, 0.2);
+}
+
+/* Model List */
+#model-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.model-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+}
+
+.model-item .model-name {
+    font-size: 0.85rem;
+    color: #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.model-item .model-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.model-item .model-actions button {
+    flex: 1;
+    padding: 5px 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    background: transparent;
+    color: #ccc;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.model-item .model-actions button:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.model-item .model-actions button.btn-move {
+    border-color: rgba(255, 200, 50, 0.5);
+    color: #ffc832;
+}
+
+.model-item .model-actions button.btn-move:hover {
+    background: rgba(255, 200, 50, 0.15);
+}
+
+.model-item .model-actions button.btn-move.active {
+    background: rgba(255, 200, 50, 0.3);
+    border-color: #ffc832;
+    box-shadow: 0 0 10px rgba(255, 200, 50, 0.3);
+}
+
+.model-item .model-actions button.btn-fix {
+    border-color: rgba(100, 255, 218, 0.5);
+    color: #64ffda;
+}
+
+.model-item .model-actions button.btn-fix:hover {
+    background: rgba(100, 255, 218, 0.15);
+}
+
+.model-item .model-actions button.btn-delete {
+    border-color: rgba(255, 80, 80, 0.5);
+    color: #ff5050;
+}
+
+.model-item .model-actions button.btn-delete:hover {
+    background: rgba(255, 80, 80, 0.15);
+}
+
+.model-item.fixed {
+    border-color: rgba(100, 255, 218, 0.3);
+    opacity: 0.7;
+}
+
+.model-item.fixed .model-name::after {
+    content: ' 🔒';
+}
+
+#editor-status {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: #64ffda;
+    min-height: 18px;
+    text-align: center;
+}
